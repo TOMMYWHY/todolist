@@ -1,11 +1,20 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">todo Component</div>
                     <h3>User: {{user.name}}</h3>
                     <div class="card-body">
+                        <div>
+                            <echarts-component ></echarts-component>
+                            <div>
+
+                            </div>
+                            <!--<chart ref="chart1" :options="orgOptions" :auto-resize="true"></chart>-->
+                        </div>
+
+                        <hr>
 
                         <div>
                             <form >
@@ -77,7 +86,7 @@
                 tasks:[],
                 err_msg:[],
                 edit_status:false,
-                completeed:false
+                // completeed:false
             }
         },
         methods:{
