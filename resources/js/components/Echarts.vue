@@ -1,6 +1,6 @@
 <template>
     <div class="Echarts">
-        <div v-if="this.tasks.length" id="main" class="col-md-12" style=" height: 400px"></div>
+        <div id="main" class="col-md-12" style=" height: 400px"></div>
 
     </div>
 </template>
@@ -108,11 +108,9 @@
                     let oneHourBefore = moment().subtract(i * 60, 'seconds').format('yyyy-MM-DD HH:mm');
                     this.xAxisObjArr.push({"time": oneHourBefore, "count": this.tasks.length})
                 }
-                console.log('------')
-                this.xAxisObjArr.forEach((item) => {
-                    item.count=100
-                })
-                console.log(this.xAxisObjArr)
+                // console.log('------')
+                // console.log(this.xAxisObjArr)
+
                 let count = this.tasks.length - 1
                 this.timeArray.forEach((item) => {
                     let time_key = moment(item.updated_at).format('yyyy-MM-DD HH:mm')
