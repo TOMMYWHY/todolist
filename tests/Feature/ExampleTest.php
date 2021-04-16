@@ -48,18 +48,6 @@ class ExampleTest extends TestCase
 		]);
 	}
 
-//	public function testTaskUpdate(){
-//		$task = User::first()->tasks()->first();
-//
-//		$this->actingAs( User::first());
-//		$taskData=[
-//			"title" => "unit testing...",
-//			"completed" => 1
-//		];
-//		$response =$this->patch( '/task/'.$task->id,$taskData);
-//		$response->assertStatus(200);
-//
-//	}
 
 	public function testTaskDestroy(){
 		$task = User::first()->tasks()->first();

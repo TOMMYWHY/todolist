@@ -24,8 +24,9 @@ Vue.prototype.$echarts = echarts;
 
 
 Vue.component('todo-component', require('./components/TodoComponent.vue').default);
+Vue.component('input-component', require('./components/InputComponent.vue').default);
+Vue.component('list-component', require('./components/ListComponent.vue').default);
 Vue.component('echarts-component', require('./components/Echarts.vue').default);
-// Vue.component('chart', ECharts)
 
 
 /**
@@ -37,4 +38,3 @@ Vue.component('echarts-component', require('./components/Echarts.vue').default);
 const app = new Vue({
     el: '#app'
 });
-// Vue.prototype.$echarts = echarts
