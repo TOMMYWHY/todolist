@@ -26,6 +26,8 @@
     },
     "dependencies": {
         "echarts": "^5.0.2",
-        "vue-echarts": "*"
+        "moment": "^2.29.1",
+        "vue-echarts": "*",
+        "vuex": "^3.6.2"
     }
 }

@@ -86,7 +86,6 @@
                 tasks:[],
                 err_msg:[],
                 edit_status:false,
-                // completeed:false
             }
         },
         methods:{
@@ -98,6 +97,7 @@
 
                     if(res.data!=0){
                         this.tasks.unshift(res.data)
+                        this.title=""
                     }
                 }).catch((err)=>{
                     if(err.response){

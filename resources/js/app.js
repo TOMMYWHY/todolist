@@ -8,11 +8,8 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
-// import echarts from 'echarts'
-
-// import ECharts from 'vue-echarts/components/ECharts'
-// import ECharts from 'vue-echarts'
-// import { use } from "echarts/core";
+import echarts from "echarts";
+Vue.prototype.$echarts = echarts;
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -23,6 +20,8 @@ window.Vue = require('vue');
 
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+
+
 
 Vue.component('todo-component', require('./components/TodoComponent.vue').default);
 Vue.component('echarts-component', require('./components/Echarts.vue').default);

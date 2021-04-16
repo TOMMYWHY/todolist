@@ -9,7 +9,7 @@
 
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.0.2/echarts.common.js"></script>
+    {{--<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.0.2/echarts.common.js"></script>--}}
 
     <script>
         {{--window.Laravel.csrfToken = {{ csrf_token() }};--}}
