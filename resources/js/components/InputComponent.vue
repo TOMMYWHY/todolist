@@ -2,10 +2,10 @@
     <div class="InputComponent">
         <form class="form-inline">
             <div class="form-group row _center">
-                <label  class="col-sm-2 col-form-label">Title:</label>
+                <label class="col-sm-2 col-form-label">Title:</label>
                 <div class="col-sm-10">
-                    <input class="form-control"   type="text"
-                           :class="{'is-invalid':err_msg.length>0}" v-model="title"  >
+                    <input class="form-control" type="text"
+                           :class="{'is-invalid':err_msg.length>0}" v-model="title">
                     <button @click="saveData()" type="button" class="btn btn-primary ">Add</button>
                 </div>
             </div>
@@ -20,20 +20,20 @@
 <script>
     export default {
         name: "InputComponent",
-        data(){
-            return{
+        data() {
+            return {
                 title: "",
                 err_msg: [],
             }
         },
 
-        methods:{
+        methods: {
             saveData() {
                 let data = {title: this.title}
                 axios.post('/task', data).then((res) => {
                     if (res.data != 0) {
                         // this.tasks.unshift(res.data)
-                        this.$emit("addTask",res.data)
+                        this.$emit("addTask", res.data)
                         this.title = ""
                     }
                 }).catch((err) => {

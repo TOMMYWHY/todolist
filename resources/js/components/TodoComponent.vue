@@ -9,15 +9,10 @@
                         <div>
                             <echarts-component :tasks="tasks"></echarts-component>
                         </div>
-
                         <hr>
-
                         <div>
                             <input-component @addTask="addTask"></input-component>
-
                         </div>
-
-
                         <hr>
                         <list-component :tasks="tasks" ></list-component>
 
@@ -45,7 +40,6 @@
                 this.tasks.unshift(task)
             },
         },
-
 
         mounted() {
             axios.get('/task').then((res) => {

@@ -1,6 +1,6 @@
 <template>
-    <div class="Echarts">
-        <div id="main" class="col-md-12" style=" height: 400px"></div>
+    <div class="Echarts container">
+        <div id="main" class=" row justify-content-center col-md-12" ></div>
 
     </div>
 </template>
@@ -32,8 +32,8 @@
                     legend: {
                         data: ['task'],
                         icon: 'circle',
-                        top: '12%',
-                        right: "12%"
+                        top: '22%',
+                        right: "22%"
 
                     },
                     grid: {
@@ -53,12 +53,12 @@
                         name: 'tasks amount',
                         max: this.tasks.length + 1,
                         min: 0,
-                        interval: 5,
+                        interval: 1,
                         axisTick: {show: true},
                         axisLine: {
                             color: "black"
                         },
-                        axisLabel: {margin: 10, textStyle: {fontSize: 14}},
+                        axisLabel: {margin: 20, textStyle: {fontSize: 14}},
                         splitLine: {show: true, lineStyle: {color: "#47617b"}},
                     }],
                     series: [{
@@ -134,5 +134,5 @@
 </script>
 
 <style scoped>
-
+    #main{height:400px}
 </style>

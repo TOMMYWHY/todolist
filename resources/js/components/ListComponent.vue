@@ -18,37 +18,38 @@
 
                                 </span>
 
-            <span v-if="edit_status == false || edit_status != task.id"
-                  :class="task.completed==true? 'completed':'' ">{{task.title}}</span>
-            <input v-if="edit_status == task.id" v-model="task.title" type="text">
-
-
+            <div class="list-group-item d-flex justify-content-between title-text " v-if="edit_status == false || edit_status != task.id"
+                  :class="task.completed==true? 'completed':'' ">{{task.title}}</div>
+            <div >
+                <input  class="form-control" v-if="edit_status == task.id" v-model="task.title" type="text">
+            </div>
             <div>
-                                    <span>
+                <span>
+                    <svg id="xx" v-on:click="edit_status = task.id"
+                         v-show="edit_status==false || edit_status!= task.id "
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="icon icon-tabler icon-tabler-edit" width="36" height="36"
+                         viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC107" fill="none"
+                         stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z"/>
+                      <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"/>
+                      <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"/>
+                      <line x1="16" y1="5" x2="19" y2="8"/>
+                    </svg>
+                <svg id="oo" v-on:click="updateTask(task)" v-show="edit_status== task.id"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="icon icon-tabler icon-tabler-checkbox" width="36" height="36" viewBox="0 0 24 24"
+                     stroke-width="1.5"
+                     stroke="#4CAF50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z"/>
+                  <polyline points="9 11 12 14 20 6"/>
+                  <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"/>
+                </svg>
 
-                                        <svg id="xx" v-on:click="edit_status = task.id"
-                                             v-show="edit_status==false || edit_status!= task.id "
-                                             xmlns="http://www.w3.org/2000/svg"
-                                             class="icon icon-tabler icon-tabler-edit" width="36" height="36"
-                                             viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFC107" fill="none"
-                                             stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <path d="M9 7 h-3a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-3"/>
-  <path d="M9 15h3l8.5 -8.5a1.5 1.5 0 0 0 -3 -3l-8.5 8.5v3"/>
-  <line x1="16" y1="5" x2="19" y2="8"/>
-</svg>
-<svg id="oo" v-on:click="updateTask(task)" v-show="edit_status== task.id" xmlns="http://www.w3.org/2000/svg"
-     class="icon icon-tabler icon-tabler-checkbox" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5"
-     stroke="#4CAF50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <polyline points="9 11 12 14 20 6"/>
-  <path d="M20 12v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h9"/>
-</svg>
 
 
-
-                                    </span>
-                <button class="btn btn-danger btn-sm" v-on:click="deleteTask(task)">delete</button>
+                </span>
+                <button class="btn btn-danger btn-sm"   v-on:click="deleteTask(task)">delete</button>
             </div>
 
         </div>
@@ -131,5 +132,8 @@
 </script>
 
 <style scoped>
-
+.title-text{
+    border: none;
+    background-color:inherit;
+}
 </style>
