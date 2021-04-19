@@ -14,9 +14,7 @@ install
 6. run `npm install` and `npm run dev` to install node.js dependencies
 
 
-
+------------ | -------------
 ![Empty list](./screenshots/1.png)
-
-
 
 
